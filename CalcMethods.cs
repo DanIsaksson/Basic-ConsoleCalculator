@@ -26,7 +26,7 @@ public class CalcEval
           // ENTER NUMBER INPUT 1
           while(enterNum1)      
           {
-               if(double.TryParse(Console.ReadLine(), out num1))
+               if(!double.TryParse(Console.ReadLine(), out num1))
                {
                     Console.WriteLine("Invalid number. Please enter a number.");
                }
@@ -39,10 +39,9 @@ public class CalcEval
 
           bool isOperatorValid = false;
           // ENSURE PROPER OPERATOR IS ENTERED
-          while(isOperatorValid)
+          while(!isOperatorValid)
           {
-               Console.WriteLine("\n+ or -: ");
-               calcOperator = Console.ReadLine();
+               calcOperator = Console.ReadKey().KeyChar;
                
                if(calcOperator == '+' || calcOperator == '-')
                {
@@ -50,7 +49,7 @@ public class CalcEval
                }
                else
                {
-                    Console.WriteLine("Invalid operator. Please enter + or -");
+                    Console.WriteLine("\nInvalid operator. Please enter + or -");
                }
           }
 
@@ -58,7 +57,7 @@ public class CalcEval
           // ENTER NUMBER INPUT 2
           while(enterNum2)      
           {
-               if(double.TryParse(Console.ReadLine(), out num2))
+               if(!double.TryParse(Console.ReadLine(), out num2))
                {
                     Console.WriteLine("Invalid number. Please enter a number.");
                }
@@ -68,16 +67,21 @@ public class CalcEval
                }
           }
 
+          //PICKS METHOD BASED ON OPERATOR PARSED FROM ABOVE
           switch (calcOperator)
           {
                case '+':
-                    return result=CalcMethods.Add(num1, num2);
+                    result=CalcMethods.Add(num1, num2);
+                    break;
                case '-':
-                    return result=CalcMethods.Subtraction(num1, num2);
+                    result=CalcMethods.Subtraction(num1, num2);
+                    break;
                default:
-                    return 0;
+                     break;
           }
-          Console.WriteLine("Result:" + result);
+
+          Console.WriteLine("\nResult: " + result + "\n");
+
      }
 }
 

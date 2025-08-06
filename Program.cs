@@ -28,14 +28,15 @@ public class Program
                bool evalIsValid = false;
                while(!evalIsValid)
                {
-                    Console.WriteLine("First enter your number.");                  
+                    Console.WriteLine("Use in this sequence: Input first number, then + or -, then second number.");                  
+                    Console.WriteLine("You can also quit any time by entering Q instead of a number or operator.\n");
                     CalcEval.Evaluate(number1, number2, calcOperator);
                     evalIsValid = true;
                }
 
                Console.WriteLine("Press Q to quit or any other key to clear the memory \nand do another calculation.");
                var decision = Console.ReadKey();
-               if(decision.Key == ConsoleKey.Q || decision.Key == ConsoleKey.q)
+               if(decision.Key == ConsoleKey.Q)
                {
                     calcIsRunning = false;
                }
