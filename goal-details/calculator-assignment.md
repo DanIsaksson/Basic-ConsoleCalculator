@@ -2,30 +2,31 @@
 1. create method for add and subtraction
     ## DONE - create method for add
     ## DONE - create method for subtraction
-2. Create input double variables for numbers and connect to methods.
-3. Test if this works.
+2. ## DONE Create input double variables for numbers and connect to methods.
+3. ## DONE Test if this works.
 
 # Second Prototyping Stage
-1. Create while-loop for calculator.
-2. Create for (int i = 0; i < 2; i++) loop for inputting numbers and operator.
-     - if i==0: 
+1. ## DONE Create while-loop for calculator.
+2. *** NOT IMPLEMENTED *** 
+Create for (int i = 0; i < 2; i++) loop for inputting numbers and operator.
+     - if i==0:
          - Console.WriteLine("Enter first number:");
          - number1 = double.Parse(Console.ReadLine());
-     - if i==1: 
+     - if i==1:
          - Console.WriteLine("Enter operator:");
          - operator = char.Parse(Console.ReadLine());
      - if i==2:
           - Console.WriteLine("Enter second number:");
           - number2 = double.Parse(Console.ReadLine());
-3. Create switch statement with char-variable check for method choice and string variable assignment.
-4. Create evaluation method using string variable to decide if using +, -, * or /.
-4. Test if this works.
+3. ## DONE Create switch statement with char-variable check for method choice and string variable assignment.
+4. ## DONE Create evaluation method using string variable to decide if using +, -, * or /.
+4. ## DONE Test if this works.
 
 # Third Prototyping Stage
-1. Add methods for Division and Multiplication.
- - Add exception for 0 on Division.
-2. Edit evaluation method.
-3. Test if this works.
+1. ## DONE Add methods for Division and Multiplication.
+ - ## DONE Add exception for 0 on Division.
+2. ## DONE Edit evaluation method.
+3. ## DONE Test if this works.
 
 # Fourth Prototyping Stage
 1. Test making more robust (avoid errors on typos etc.).

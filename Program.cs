@@ -21,16 +21,13 @@ public class Program
           while(calcIsRunning)
           {
                Console.Clear(); // Clear console on each loop iteration
-               double number1=0;
-               double number2=0;
-               char calcOperator=' ';
 
                bool evalIsValid = false;
                while(!evalIsValid)
                {
                     Console.WriteLine("Use in this sequence: Input first number, then + or -, then second number.");                  
                     Console.WriteLine("You can also quit any time by entering Q instead of a number or operator.\n");
-                    CalcEval.Evaluate(number1, number2, calcOperator);
+                    CalcEval.Evaluate();
                     evalIsValid = true;
                }
 

@@ -12,14 +12,33 @@ public static class CalcMethods
      {
           return subNum1 - subNum2;
      }
+
+     public static double Multiplication(double mulNum1, double mulNum2)
+     {
+          return mulNum1 * mulNum2;
+     }
+
+     public static double Division(double divNum1, double divNum2)
+     {
+          while(divNum2 == 0)
+          {
+               Console.WriteLine("Error: Either divided by zero or not a number.\nTry again: ");
+               double.TryParse(Console.ReadLine(), out divNum2);
+          }
+          return divNum1 / divNum2;
+     }
+
 }
 
 
 // =========== EVALUATE ============
 public class CalcEval
 {
-    public static void Evaluate(double num1, double num2, char calcOperator)
+    public static void Evaluate()
     {
+          double num1 = 0;
+          double num2 = 0;
+
           double result=0;
 
           bool enterNum1 =  true;
@@ -36,20 +55,24 @@ public class CalcEval
                }
           }
 
-
+          char calcOperator= ' ';
           bool isOperatorValid = false;
           // ENSURE PROPER OPERATOR IS ENTERED
           while(!isOperatorValid)
           {
-               calcOperator = Console.ReadKey().KeyChar;
-               
-               if(calcOperator == '+' || calcOperator == '-')
+               calcOperator = Console.ReadLine()[0];
+
+               switch(calcOperator)
                {
-                    isOperatorValid = true;
-               }
-               else
-               {
-                    Console.WriteLine("\nInvalid operator. Please enter + or -");
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '/':
+                         isOperatorValid = true;
+                         break;
+                    default:
+                         Console.WriteLine("\nInvalid operator. Please enter +, -, *, or /\nRe-enter here: ");
+                         break;
                }
           }
 
@@ -75,6 +98,12 @@ public class CalcEval
                     break;
                case '-':
                     result=CalcMethods.Subtraction(num1, num2);
+                    break;
+               case '*':
+                    result=CalcMethods.Multiplication(num1, num2);
+                    break;
+               case '/':
+                    result=CalcMethods.Division(num1, num2);
                     break;
                default:
                      break;
