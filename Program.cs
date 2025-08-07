@@ -25,7 +25,7 @@ public class Program
                bool evalIsValid = false;
                while(!evalIsValid)
                {
-                    Console.WriteLine("Use in this sequence: Input first number, then + or -, then second number.");                  
+                    Console.WriteLine("Use in this sequence: Input...\nFirst number, \nthen +, -, * or / \nthen second number.");                  
                     Console.WriteLine("You can also quit any time by entering Q instead of a number or operator.\n");
                     CalcEval.Evaluate();
                     evalIsValid = true;
