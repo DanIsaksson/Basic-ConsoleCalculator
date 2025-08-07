@@ -1,6 +1,7 @@
 namespace Methods;
 
-// =========== METHODS ===========
+// =========== OPERATION METHODS ===========
+// ===== DO NOT CHANGE IN REFACTORING ======
 public static class CalcMethods
 {
     public static double Add(double addNum1, double addNum2)
@@ -31,64 +32,17 @@ public static class CalcMethods
 }
 
 
-// =========== EVALUATE ============
+//  ┌─────────────────────────────────────────────────────┐
+//  │                   E V A L U A T E                   │
+//  │                   ═══════════════                   │
+//  │               ! ! !  REFACTOR  ! ! !                │
+//  └─────────────────────────────────────────────────────┘
 public class CalcEval
 {
-    public static void Evaluate()
-    {
-          double num1 = 0;
-          double num2 = 0;
 
-          double result=0;
-
-          bool enterNum1 =  true;
-          // ENTER NUMBER INPUT 1
-          while(enterNum1)      
-          {
-               if(!double.TryParse(Console.ReadLine(), out num1))
-               {
-                    Console.WriteLine("Invalid number. Please enter a number.");
-               }
-               else
-               {
-                    enterNum1=false;
-               }
-          }
-
-          char calcOperator= ' ';
-          bool isOperatorValid = false;
-          // ENSURE PROPER OPERATOR IS ENTERED
-          while(!isOperatorValid)
-          {
-               calcOperator = Console.ReadLine()[0];
-
-               switch(calcOperator)
-               {
-                    case '+':
-                    case '-':
-                    case '*':
-                    case '/':
-                         isOperatorValid = true;
-                         break;
-                    default:
-                         Console.WriteLine("\nInvalid operator. Please enter +, -, *, or /\nRe-enter here: ");
-                         break;
-               }
-          }
-
-          bool enterNum2 =  true;
-          // ENTER NUMBER INPUT 2
-          while(enterNum2)      
-          {
-               if(!double.TryParse(Console.ReadLine(), out num2))
-               {
-                    Console.WriteLine("Invalid number. Please enter a number.");
-               }
-               else
-               {
-                    enterNum2=false;
-               }
-          }
+     double result = 0;
+     public static void Evaluate()
+     {
 
           //PICKS METHOD BASED ON OPERATOR PARSED FROM ABOVE
           switch (calcOperator)

@@ -1,5 +1,6 @@
 ﻿namespace Calculator;
 
+using System.Linq;
 using Methods;
 
 // ==== TO USE ====
